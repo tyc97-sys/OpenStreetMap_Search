@@ -1,10 +1,16 @@
 import json
+# import geojson
 
-path = r'F:\AI\Line_Chatbot\map_test\taipei_fitness.json'
+# path = 'taipei_fitness.json'
+path = 'fitness.geojson'
 
 with open(path, 'r', encoding='utf-8') as f:
     output = json.load(f)
 
+print(output["features"])
+print(len(output["features"]))
 
-print(output['features'][0]['geometry']['coordinates'])
-# print(type(output))
+for f in output["features"]:
+    print(f["geometry"]["coordinates"])
+
+# print(output)
